@@ -8,7 +8,7 @@ import Register from './pages/Register';
 import UserDashboard from './pages/UserDashboard';
 import NGODashboard from './pages/NGODashboard';
 import AdminDashboard from './pages/AdminDashboard';
-
+import RazorPayDetails from './components/RazorPayDetails';
 import NGOProfile from './pages/NGOProfile';
 import TeamMembersPage from './pages/TeamMembersPage';
 
@@ -72,6 +72,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+<Route
+  path="/donate"
+  element={
+    <ProtectedRoute allowedUserType="user">
+      <RazorPayDetails />
+    </ProtectedRoute>
+  }
+/>
 
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
